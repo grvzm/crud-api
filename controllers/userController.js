@@ -19,11 +19,11 @@ const getAllUsers = async (req,res)=>{
 }
 
 const findAndUpdateUser = async (req,res)=>{
-    const name = req.body.firstname;
+    const name = req.body.lastname;
     try{
         const updatedUser = await User.findOneAndUpdate(
             {_id:req.params.userid},
-            {$set:{firstname:name}},
+            {$set:{lastname:name}},
             {returnOriginal:false}
         );
         res.status(200).json(updatedUser);
