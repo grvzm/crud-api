@@ -6,12 +6,12 @@ import cors from 'cors';
 
 const app = express();
 const PORT = process.env.PORT || 4000;
+var corsOptions = {
+  origin: 'https://react-crud-client.netlify.app',
+  optionsSuccessStatus: 200,
+};
 
-app.use(
-  cors({
-    origin: 'https://react-crud-client.netlify.app/',
-  })
-);
+app.use(cors(corsOptions));
 app.use(express.json());
 app.use('/api/users', userRoutes);
 
