@@ -2,16 +2,22 @@ import express from 'express';
 import 'dotenv/config';
 import mongoose from 'mongoose';
 import userRoutes from './routes/users.js';
-import cors from 'cors';
 
 const app = express();
 const PORT = process.env.PORT || 4000;
-let corsOptions = {
-  origin: 'https://react-crud-client.netlify.app/',
-  optionsSuccessStatus: 200,
-};
 
-app.use(cors(corsOptions));
+app.use(function (req, res, next) {
+  res.header(
+    'Access-Control-Allow-Origin',
+    'https://react-crud-client.netlify.app/'
+  );
+  res.header(
+    'Access-Control-Allow-Headers',
+    'Origin, X-Requested-With, Content-Type, Accept'
+  );
+  next();
+});
+
 app.use(express.json());
 app.use('/api/users', userRoutes);
 
