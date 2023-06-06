@@ -7,7 +7,7 @@ import cors from 'cors';
 const app = express();
 const PORT = process.env.PORT || 4000;
 var corsOptions = {
-  origin: 'https://react-crud-client.netlify.app',
+  origin: ['https://react-crud-client.netlify.app', 'http://localhost:4000'],
   optionsSuccessStatus: 200,
 };
 
