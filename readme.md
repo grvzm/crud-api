@@ -1,11 +1,14 @@
 ## CRUD api for managing user data
 
 #### About
+
 an API that can do CRUD operations, built using express and mongoose, can be easily deployed using mongodb atlas and render.
 
 #### Guide
+
 Steps to use this api on your machine(must have nodejs and mongodb-shell/atlas, installed)
-1. Clone the repositories and install the dependencies.
+
+1. Clone the repository and install the dependencies.
 2. Run mongosh/atlas
 3. Connect the DB by creating and .env file and storing "DB_CONNECTION" URI.
 4. RUN using 'npm run start' command and test the api using Postman.
